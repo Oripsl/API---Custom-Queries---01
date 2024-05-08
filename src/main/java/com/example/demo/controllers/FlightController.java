@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import com.example.demo.entities.Flight;
+import com.example.demo.entities.FlightStatus;
 import com.example.demo.repositories.FlightResporitory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,5 +38,10 @@ public class FlightController {
     @GetMapping("/retrieve")
     public List<Flight> retrieveFlights() {
         return flightResporitory.findAll();
+    }
+
+    @GetMapping("/byStatus")
+    public List<Flight> retrieveByStatus(String status){
+        return flightResporitory.findByStatus(FlightStatus.toString(status));
     }
 }

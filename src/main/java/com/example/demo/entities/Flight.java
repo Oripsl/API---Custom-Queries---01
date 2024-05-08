@@ -17,18 +17,14 @@ public class Flight {
     private String description;
     private String fromAirport;
     private String toAirport;
-    private flightStatus status;
+    private FlightStatus status;
 
-    enum flightStatus {
-        ONTIME,
-        DELAYED,
-        CANCELLED
-    }
+
 
     public Flight(String description, String fromAirport, String toAirport) {
         this.description = description;
         this.fromAirport = fromAirport;
         this.toAirport = toAirport;
-        this.status = status.ONTIME;
+        this.status = FlightStatus.ONTIME;
     }
 }
